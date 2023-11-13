@@ -1,0 +1,97 @@
+{
+  "id": "booking_section",
+  "type": "SharedSlice",
+  "name": "BookingSection",
+  "description": "BookingSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "past_event": {
+          "type": "Text",
+          "config": {
+            "label": "Past Event",
+            "placeholder": ""
+          }
+        },
+        "upcoming_event": {
+          "type": "Text",
+          "config": {
+            "label": "Upcoming Event",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "date": {
+          "type": "Date",
+          "config": {
+            "label": "Date",
+            "placeholder": ""
+          }
+        },
+        "place_name": {
+          "type": "Text",
+          "config": {
+            "label": "Place Name",
+            "placeholder": ""
+          }
+        },
+        "city_country": {
+          "type": "Text",
+          "config": {
+            "label": "City Country",
+            "placeholder": ""
+          }
+        },
+        "artist_page": {
+          "type": "Link",
+          "config": {
+            "label": "Artist Page",
+            "select": "document",
+            "customtypes": [
+              "artistpage"
+            ]
+          }
+        },
+        "artist_name": {
+          "type": "Text",
+          "config": {
+            "label": "Artist Name",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "tba": {
+          "type": "Text",
+          "config": {
+            "label": "TBA",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}
