@@ -14,8 +14,8 @@ import { LanguageSwitcher } from '@/app/components/LanguageSwitcher';
   
 gsap.registerPlugin(ScrollTrigger);
 
-export default function HeaderComponent({settings, locales}: {settings: any; locales: any;}) {
-
+export default function HeaderComponent({ settings, locales }: { settings: any; locales: any; }) {
+    
     useEffect(() => {
         // Create your GSAP animation
         const showAnim = gsap.from('.header-nav-block, .header-nav-mobile', {
@@ -37,7 +37,7 @@ export default function HeaderComponent({settings, locales}: {settings: any; loc
       }, []);
   
     const [menuIsOpen, setMenuIsOpen] = useState(false);  
-    console.log('Locales in HeaderComponent:', locales);
+
     return (
         <header id="home">
               <div className="header-container">

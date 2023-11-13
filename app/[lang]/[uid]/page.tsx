@@ -4,7 +4,7 @@ import { SliceZone } from '@prismicio/react';
 import * as prismic from '@prismicio/client';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
-// ⬇️ Note the imports of `getLocales` and `LanguageSwitcher`
+
 import { getLocales } from '@/app/utils/getLocales';
 import { LanguageSwitcher } from '@/app/components/LanguageSwitcher';
 
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const client = createClient();
-  // ⬇️ Note this line with the `lang` parameter being passed in
+
   const page = await client
     .getByUID('page', params.uid, { lang: params.lang })
     .catch(() => notFound());
@@ -37,20 +37,18 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
-  // ⬇️ Note this line with the `lang` parameter being passed in
-   const page = await client
+
+  const page = await client
     .getByUID('page', params.uid, {
       lang: params.lang,
     })
     .catch(() => notFound());
 
-	// ⬇️ Note the fetching of the locales
   const locales = await getLocales(page, client);
 
-	// ⬇️ Note the rendering of the LanguageSwitcher component
   return (
     <>
-      <LanguageSwitcher locales={locales} />
+      <LanguageSwitcher locales={locales}/>
       <SliceZone slices={page.data.slices} components={components} />
     </>
   );
